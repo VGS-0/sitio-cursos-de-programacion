@@ -1,239 +1,257 @@
 <!DOCTYPE html>
+<!-- se a;adio la seccion de sobre el curso y logros, al igual que agregar iconos en la pagina -->
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kodland - Proyecto Módulo 9</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: 'Segoe UI', sans-serif;
-        background-color: #f0f4f8;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curso de Diseño Web</title>
 
-      .bg-nav {
-        background-color: #6b6ff0;
-      }
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-      header {
-        background: linear-gradient(135deg, #6c63ff, #00bcd4);
-        color: white;
-        padding: 100px 20px;
-        text-align: center;
-        border-bottom-left-radius: 50% 20%;
-        border-bottom-right-radius: 50% 20%;
-      }
+  <style>
+    :root {
+      --color-primario: #7c3aed;
+      --color-secundario: #6366f1;
+      --color-acento: #ec4899;
+      --color-fondo: #fdf4ff;
+      --color-cta: #10b981;
+    }
 
-      header h1 {
-        font-size: 3rem;
-        font-weight: bold;
-      }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f6e9ff;
+      color: #1f2937;
+      padding: 1rem;
+    }
 
-      header p {
-        font-size: 1.2rem;
-        max-width: 700px;
-        margin: 0 auto;
-      }
+    header {
+      background: linear-gradient(90deg, var(--color-primario), var(--color-secundario));
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin: 1rem auto;
+      border-radius: 1rem;
+    }
 
-      section {
-        padding: 80px 20px;
-      }
+    header h1 {
+      font-size: 2.5rem;
+    }
 
-      .card {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-      }
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-      .card:hover {
-        transform: scale(1.05);
-      }
+    nav a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      transition: background-color 0.3s;
+    }
 
-      .accordion-item {
-        border-radius: 8px;
-        overflow: hidden;
-        border: 1px solid #dee2e6;
-      }
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
 
-      .card-img-top {
-        object-fit: cover;
-      }
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem 1rem;
+      background-color: #f8f9fa;
+      border-radius: 1rem;
+    }
 
-      footer {
-        background-color: #6b6ff0;
-        color: white;
-        padding: 30px 0;
-        margin-top: 50px;
-      }
+    section h2 {
+      color: var(--color-primario);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
 
-      footer a {
-        text-decoration: none;
-        color: white;
-      }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
 
-      .social-icon img {
-        width: 40px;
-        height: 40px;
-        padding: 8px;
-        background-color: white;
-        border-radius: 50%;
-        transition: transform 0.3s ease, background-color 0.3s;
-      }
+    footer {
+      background-color: var(--color-primario);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin: 1rem auto;
+      border-radius: 1rem;
+      font-size: 0.9rem;
+    }
 
-      .social-icon:hover img {
-        transform: scale(1.2);
-        background-color: #9cdad6;
-      }
-    </style>
-  </head>
+    footer a {
+      color: #d8b4fe;
+    }
 
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-nav sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Cursos de programación</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#acerca">Acerca de</a></li>
-            <li class="nav-item"><a class="nav-link" href="#tutores">Tutores</a></li>
-            <li class="nav-item"><a class="nav-link" href="#comentarios">Comentarios</a></li>
-          </ul>
-        </div>
-      </div>
+    #reviews blockquote {
+      background: linear-gradient(120deg, #f3e8ff, #fce7f3);
+      border-left: 5px solid var(--color-acento);
+      padding: 1rem;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    #teachers .card-img-top {
+      height: 150px;
+      object-fit: cover;
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    #teachers .col-6.col-md-3 {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Curso de Diseño Web en Línea</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">Sobre el curso</a></li>
+        <li><a href="#goals">Lo que lograrás</a></li>
+        <li><a href="#teachers">Maestros</a></li>
+        <li><a href="#reviews">Reseñas</a></li>
+        <li><a href="#register">Inscribirse</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- Header principal -->
-    <header>
-      <div class="container">
-        <h1>¡Bienvenido al mundo de la programación!</h1>
-        <p>Descubre el curso ideal para ti. Aprende desde lo más básico hasta temas avanzados con tutores increíbles y recursos interactivos.</p>
-      </div>
-    </header>
+  <!-- SOBRE EL CURSO -->
+  <section id="about">
+    <h2>Sobre el curso</h2>
+    <p>Aprende diseño web desde cero con actividades prácticas y divertidas. En este curso verás:</p>
+    <ul>
+      <li><i class="bi bi-code-slash me-2"></i>HTML y CSS desde lo básico</li>
+      <li><i class="bi bi-palette me-2"></i>Diseño visual moderno</li>
+      <li><i class="bi bi-image me-2"></i>Edición de imágenes</li>
+      <li><i class="bi bi-phone me-2"></i>Diseño adaptable para celulares</li>
+      <li><i class="bi bi-layers me-2"></i>Proyectos reales paso a paso</li>
+    </ul>
+  </section>
 
-    <!-- Acerca -->
-    <section id="acerca" class="bg-white text-center">
-      <div class="container">
-        <h2 class="mb-4">Acerca de los Cursos</h2>
-        <p class="lead">
-          Nuestros cursos abarcan desde fundamentos hasta conocimientos técnicos avanzados en programación, redes y bases de datos.
-        </p>
-      </div>
-    </section>
+  <!-- NUEVA SECCIÓN: LOGROS -->
+  <section id="goals">
+    <h2>¿Qué lograrás al final del curso?</h2>
+    <p>Al finalizar este curso, serás capaz de crear sitios web modernos, adaptativos y visualmente atractivos, desarrollando habilidades prácticas en:</p>
+    <ul>
+      <li><i class="bi bi-layout-text-window me-2"></i>Maquetación con HTML5 y CSS3</li>
+      <li><i class="bi bi-phone-landscape me-2"></i>Diseño responsivo</li>
+      <li><i class="bi bi-bootstrap me-2"></i>Uso de Bootstrap</li>
+      <li><i class="bi bi-file-earmark-image me-2"></i>Optimización de imágenes</li>
+      <li><i class="bi bi-universal-access me-2"></i>Accesibilidad y usabilidad</li>
+      <li><i class="bi bi-cloud-upload me-2"></i>Publicación de sitios web</li>
+    </ul>
+  </section>
 
-    <!-- Tutores -->
-    <section id="tutores" class="bg-light text-center">
-      <div class="container">
-        <h2 class="mb-5">Conoce a Nuestros Tutores</h2>
-        <div class="row justify-content-center g-4">
-          <div class="col-md-3">
-            <div class="card">
-              <img src="https://via.placeholder.com/300" class="card-img-top img-fluid" alt="Foto del Maestro 1">
-              <div class="card-body">
-                <h5 class="card-title">Maestro 1</h5>
-                <p class="card-text">Especialista en Python.<br>Contacto: 78991011</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <img src="https://via.placeholder.com/300" class="card-img-top img-fluid" alt="Foto del Maestro 2">
-              <div class="card-body">
-                <h5 class="card-title">Maestro 2</h5>
-                <p class="card-text">HTML, CSS y diseño web.<br>Contacto: 12334566</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <img src="https://via.placeholder.com/300" class="card-img-top img-fluid" alt="Foto del Maestro 3">
-              <div class="card-body">
-                <h5 class="card-title">Maestro 3</h5>
-                <p class="card-text">Desarrollo en Unity.<br>Contacto: 78991011</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <img src="https://via.placeholder.com/300" class="card-img-top img-fluid" alt="Foto del Maestro 4">
-              <div class="card-body">
-                <h5 class="card-title">Maestro 4</h5>
-                <p class="card-text">Programación en Roblox.<br>Contacto: 12131415</p>
-              </div>
-            </div>
+  <!-- MAESTROS -->
+  <section id="teachers" class="container my-5">
+    <h2 class="text-primary text-center mb-4">Nuestros Maestros</h2>
+    <div class="alert alert-info text-center" role="alert">
+      ¡Aprende con expertos en diseño web que te guiarán paso a paso!
+    </div>
+    <div class="row g-4 mt-2">
+      <div class="col-6 col-md-3">
+        <div class="card shadow-sm h-100">
+          <img src="https://extension.uned.es/archivos_publicos/webex_actividades/41869/pexelsmaxfischer5212320_med.jpg" class="card-img-top rounded-4" alt="Anna Ivanova">
+          <div class="card-body">
+            <h5 class="card-title">Anna Ivánova</h5>
+            <p class="card-text">Diseñadora web con más de 10 años de experiencia, experta en interfaces modernas y diseño móvil.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Ver perfil</a>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Comentarios -->
-    <section id="comentarios" class="bg-white text-center">
-      <div class="container">
-        <h2 class="mb-4">Comentarios</h2>
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                Comentario 1
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show">
-              <div class="accordion-body">
-                <strong>"Recomiendo este curso 100%." - María</strong> Me ayudó a mejorar mis habilidades en informática rápidamente.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                Comentario 2
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse">
-              <div class="accordion-body">
-                <strong>"Aprendí muchísimo en poco tiempo." - Carlos</strong> Los tutores explican muy bien.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                Comentario 3
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse">
-              <div class="accordion-body">
-                <strong>"Una experiencia increíble." - Ana</strong> Muy recomendado para jóvenes principiantes.
-              </div>
-            </div>
+      <div class="col-6 col-md-3">
+        <div class="card shadow-sm h-100">
+          <img src="https://s.bibliaon.com/es/imagenes/versiculos_para_maestros_profesores-og.jpg" class="card-img-top rounded-4" alt="Igor Petrov">
+          <div class="card-body">
+            <h5 class="card-title">Ígor Petrov</h5>
+            <p class="card-text">Especialista en UX/UI que transforma ideas en experiencias digitales. Conductor de talleres juveniles.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Ver perfil</a>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center">
-      <p class="mb-2">
-        Contacto:
-        <a class="text-white">aaa@programmingschool.com</a>
-      </p>
-      <div class="d-flex justify-content-center gap-3 mb-3">
-        <a href="https://www.instagram.com/" target="_blank" class="social-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-        </a>
-        <a href="https://www.tiktok.com/" target="_blank" class="social-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
-        </a>
-        <a href="https://www.facebook.com/" target="_blank" class="social-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-        </a>
+      <div class="col-6 col-md-3">
+        <div class="card shadow-sm h-100">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80" class="card-img-top rounded-4" alt="Laura Martínez">
+          <div class="card-body">
+            <h5 class="card-title">Laura Martínez</h5>
+            <p class="card-text">Experta en accesibilidad web y diseño inclusivo para todos los usuarios.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Ver perfil</a>
+          </div>
+        </div>
       </div>
-    </footer>
+      <div class="col-6 col-md-3">
+        <div class="card shadow-sm h-100">
+          <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=400&q=80" class="card-img-top rounded-4" alt="Carlos Gómez">
+          <div class="card-body">
+            <h5 class="card-title">Carlos Gómez</h5>
+            <p class="card-text">Desarrollador front-end con pasión por enseñar buenas prácticas y tecnologías modernas.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Ver perfil</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-  </body>
+  <!-- RESEÑAS -->
+  <section id="reviews">
+    <h2>Reseñas de estudiantes</h2>
+    <blockquote>
+      <p>"¡Este curso me encantó! Ahora hago mis propios sitios web" - María, 16 años</p>
+    </blockquote>
+    <blockquote>
+      <p>"¡Los profes son geniales y las clases son muy prácticas!" - Alexey, 14 años</p>
+    </blockquote>
+  </section>
+
+  <!-- REGISTRO -->
+  <section id="register" class="bg-light p-5 rounded shadow-sm mt-5">
+    <h2 class="text-primary mb-3 text-center">Inscríbete en el curso</h2>
+    <p class="mb-4 text-center">¡No te quedes fuera! Llena el formulario y empieza tu aventura como diseñador web.</p>
+    <form class="container" style="max-width: 600px;">
+      <div class="mb-3">
+        <label for="nombre" class="form-label"><i class="bi bi-person-fill me-2"></i>Nombre completo</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Escribe tu nombre" required>
+      </div>
+      <div class="mb-3">
+        <label for="edad" class="form-label"><i class="bi bi-hourglass-split me-2"></i>Edad</label>
+        <input type="number" class="form-control" id="edad" min="10" max="99" placeholder="Ej. 15" required>
+      </div>
+      <div class="mb-3">
+        <label for="correo" class="form-label"><i class="bi bi-envelope-fill me-2"></i>Correo electrónico</label>
+        <input type="email" class="form-control" id="correo" placeholder="tucorreo@email.com" required>
+      </div>
+      <div class="mb-3">
+        <label for="mensaje" class="form-label"><i class="bi bi-chat-left-text me-2"></i>¿Por qué quieres aprender diseño web?</label>
+        <textarea class="form-control" id="mensaje" rows="3" placeholder="Escribe tu motivación..."></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-success px-4"><i class="bi bi-send-fill me-1"></i>Enviar inscripción</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>Contacto: <a href="#"><i class="bi bi-envelope-at-fill"></i> [email protegido]</a></p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
